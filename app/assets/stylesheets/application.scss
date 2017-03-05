@@ -84,7 +84,7 @@
  }
 
 #breaking_paragraph {
-  font-family: 'Cormorant Garamond', serif;
+   font-family: 'Cormorant Garamond', serif;
    text-align: justify;
    margin: 0 auto;
    width: 30em;
@@ -155,20 +155,35 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.090)";  /* IE8 */
   }
 
-
 #suspects {
-  text-align: center;
-  h1 {
-    padding-top: 50px;
-    padding-bottom: 0px;
-    font-family: 'Playfair Display SC', serif;
-  }
-  h3 {
-    font-family: 'Playfair Display SC', serif;
-  }
-  img {
-    margin-top: 0px;
-    width: 20%;
-    height: 20%;
-  }
+    text-align: center;
+    h1 {
+      padding-top: 50px;
+      padding-bottom: 0px;
+      font-family: 'Playfair Display SC', serif;
+    }
+    h3 {
+      text-align: center;
+      font-family: 'Playfair Display SC', serif;
+    }
+    p {
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      text-align: justify;
+      margin: 0 auto;
+      width: 30em;
+    }
+    img {
+      margin-top: 0px;
+      width: 20%;
+      height: 20%;
+    }
+    #drew_a {
+      img {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        width: 20%;
+        height: 20%;
+      }
+    }
 }

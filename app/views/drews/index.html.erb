@@ -3,8 +3,8 @@
       <li class="dropdown navbar-right">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suspects</a>
          <ul class="dropdown-menu">
-           <a class="dropdown-item">Drew Anderson</a>
-           <a class="dropdown-item" href="#marisa">Marissa Foster</a>
+           <a class="dropdown-item" href="#drew">Drew Anderson</a>
+           <a class="dropdown-item" href="#marissa">Marissa Foster</a>
            <a class="dropdown-item">President Stewart</a>
            <a class="dropdown-item">Stan Boyle</a><br/>
            <a class="dropdown-item">Alysha Jones</a>
@@ -48,17 +48,23 @@
 </div>
 <div id="suspects">
   <h1>Don't Believe Everything You Read</h1>
-  <%= image_tag "marisa.jpg", id:"marisa" %>
-  <div id="background">
+  <div id ="drew_a">
+    <%= image_tag "drew.jpg", id:"drew" %>
+    <h3 id="suspect_header">Drew Anderson</h3>
+    <p>BACKROUND: The quintessential apathetic, all-thrills bachelor of the New Era unimpressed by corporate commandments</p>
+    <p>MOTIVE: Publish the biggest FU of news history</p>
+    <p>VICE: A dying grandmother with unrealistic requests</p>
+  </div>
+  <div id="marissa_f">
+    <%= image_tag "marisa.jpg", id:"marissa" %>
     <h3 id="suspect_header">Marissa Foster</h3>
-    <span>BACKGROUND:</span>
-    <span>Born into small town supremacy as the daughter of Buffalo’s Mattress King and current marketing goddess at Production News</span></br>
-    <span>MOTIVE: A selfie, checked in @ --- the TOP (previously the Glass Ceiling)</span></br>
-    <span>VICE: Cornell graduates layered in Patagonia i.e. ghosts of boyfriends past</span></br>
+    <p>BACKROUND: Born into small town supremacy as the daughter of Buffalo’s Mattress King and current marketing goddess at Production News</p>
+    <p>MOTIVE: A selfie, checked in @ --- the TOP (previously the Glass Ceiling)</p>
+    <p>VICE: Cornell graduates layered in Patagonia i.e. ghosts of boyfriends past</p>
   </div>
 </div>
-
 <script>
+//Function that rotates breaking news header after clicking on story
   $( "#navbar-example a[href*=breaking_header]" ).on( "click", function() {
     setTimeout(function() {
           $('.breaking').addClass('rotateRight');
@@ -71,7 +77,7 @@
   })
 
 
-//Sets scrollspy target to this navbar
+//Sets scrollspy target to be navbar
 $('body').scrollspy({ target: '#navbar-example', offset: 50 })
 
 //Enable smooth scrolling
