@@ -1,0 +1,99 @@
+<div id="navbar-example">
+  <ul class="nav nav-pills">
+      <li class="dropdown navbar-right">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suspects</a>
+         <ul class="dropdown-menu">
+           <a class="dropdown-item">Drew Anderson</a>
+           <a class="dropdown-item" href="#marisa">Marisa Foster</a>
+           <a class="dropdown-item">President Stewart</a>
+           <a class="dropdown-item">Stan Boyle</a><br/>
+           <a class="dropdown-item">Alysha Jones</a>
+         </ul>
+      </li>
+    <li class="navbar-right"><a href="#author_header" id="story">The Author</a></li>
+    <li class="navbar-right"><a href="#breaking_header">Story</a></li>
+  </ul>
+</div>
+<div id="bookcover">
+  <h1>The Classifieds of Drew Anderson</h1>
+  <%= image_tag "bookcover.jpg" %>
+</div>
+<div class="center">
+<a href="http://amazon.com" class="btn btn-primary btn-lg">Buy on Kindle</a>
+</div>
+<div id="breaking_header">
+  <h1 class="break">Breaking</h1>
+  <h1 class="breaking">News</h1>
+  <h4>Not All Headlines Are Created Equal</h4>
+</div>
+<div id="breaking_paragraph">
+  <p>Molded by economic suffering, lake effect snow, and a raging football problem, Production News knows what matters most to Buffalonians. Local news has flourished for decades in Buffalo, but in the digital age, is crumbling. Small town values have lost to all glamour, no value headlines. The News Group is the new corporate kahuna in town.</p>
+  <p>As Production News strategizes to rebound from financial and subscriber loss, a national investigation jeopardizes the paper’s impartial legacy. At the front of the chaos is Drew Anderson, manager of the archaic classifieds section. For Drew, and most employees at Production, the workday is a fog, polluted by secluded, aristocratic decisions. But when tragic events appear to have a home in the classifieds, getting the scoop means the difference between leaking the truth and advancing the alternative.</p>
+  <p>While undercover, the clarity of Drew’s intention is continually blurred by the pervasive media circus and hardened by deceit. Everyone is unquestionably a suspect. A deeper purpose auspiciously reveals itself as the end draws closer. Drew knows that if he can keep his eyes and ears open, he may rescue Buffalo from forever surrendering to fiction.</p>
+  <span>In an age of fakes,</span>
+  <span id="breaking_italic">The Classifieds of Drew Anderson</span>
+  <span>speaks to the inner reporter in all of us.</span>
+  <p id="breaking_bold">Can the truth and the front page ever be the same?</p>
+</div>
+<div id="author_header">
+  <h1>Meet The Author</h1>
+</div>
+<%= image_tag "author.jpg", class:"author_img" %>
+<div id="author">
+  <p>A longtime resident of the outside, Lee Devier writes while looking in. Originally a place of refuge, writing has transformed into an obsession to map if and where loneliness and awareness intersect. Behind each of her quests is the fireproof belief that it’s easy to think and harder to feel.</p>
+  <p>For distraction, Lee listens to Kayne throwbacks, sleeps with her nightmares, and plays with metaphors while in transit.</p>
+  <p>She lives in a major metropolitan city.</p>
+  <span id="author_italic">The Classifieds of Drew Anderson</span>
+  <span>is her first major literary work.</span>
+</div>
+<div id="suspects">
+  <h1>Don't Believe Everything You Read</h1>
+  <%= image_tag "marisa.jpg", id:"marisa" %>
+  <div id="background">
+    <h3 id="suspect_header">Marisa Foster</h3>
+    <span>BACKGROUND:</span>
+    <span>Born into small town supremacy as the daughter of Buffalo’s Mattress King and current marketing goddess at Production News</span></br>
+    <span>MOTIVE: A selfie, checked in @ --- the TOP (previously the Glass Ceiling)</span></br>
+    <span>VICE: Cornell graduates layered in Patagonia i.e. ghosts of boyfriends past</span></br>
+  </div>
+</div>
+
+<script>
+  $( "#navbar-example a[href*=breaking_header]" ).on( "click", function() {
+    setTimeout(function() {
+          $('.breaking').addClass('rotateRight');
+          $('.break').addClass('rotateLeft');
+          setTimeout(function() {
+            $('.breaking').removeClass('rotateRight');
+            $('.break').removeClass('rotateLeft');
+          }, 2000);
+    }, 1300)
+  })
+
+
+//Sets scrollspy target to this navbar
+$('body').scrollspy({ target: '#navbar-example', offset: 50 })
+
+//Enable smooth scrolling
+$("#navbar-example a").on('click', function(event) {
+
+  // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+    // Prevent default anchor click behavior
+    event.preventDefault();
+    // Store hash
+    var hash = this.hash;
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 1000, function(){
+
+    // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+
+  } // End if
+
+});
+</script>

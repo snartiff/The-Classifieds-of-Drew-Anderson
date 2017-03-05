@@ -1,0 +1,174 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ #author {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: justify;
+    margin: 0 auto;
+    width: 30em;
+ }
+
+ #background {
+   font-family: 'Cormorant Garamond', serif;
+   font-weight: 900;
+   text-align: justify;
+   margin: 0 auto;
+   width: 30em;
+   #suspect_header {
+     text-align: center;
+   }
+ }
+
+ .btn {
+   color: black;
+  margin: 0 auto !important;
+  margin-left: 50px;
+  background-color:transparent;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  font-family: 'Playfair Display SC', serif;
+ }
+
+ .btn:hover {
+   background-color: black;
+ }
+
+ .center {
+   text-align: center;
+ }
+
+ .col-md-4 text-center {
+   margin-bottom: 40px !important;
+   padding-bottom: 100px !important;
+ }
+ .author_img {
+   padding-top: 10px;
+   padding-bottom: 30px;
+   margin: auto;
+   display: block;
+   border-radius: 50%;
+ }
+
+ #author_header {
+   font-family: 'Playfair Display SC', serif;
+   text-align: center;
+   padding-top: 90px;
+ }
+
+#author_italic {
+  font-style: italic;
+  display: inline;
+}
+
+ #breaking_header {
+   padding-top: 50px;
+   font-family: 'Playfair Display SC', serif;
+   text-align: center;
+   h1 {
+     display: inline-flex;
+   }
+ }
+
+#breaking_paragraph {
+  font-family: 'Cormorant Garamond', serif;
+   text-align: justify;
+   margin: 0 auto;
+   width: 30em;
+   #breaking_bold {
+     margin-top: 5px;
+     font-weight: bolder;
+   }
+   #breaking_italic {
+     font-style: italic;
+     display: inline;
+   }
+ }
+
+ #bookcover {
+   font-family: 'Playfair Display SC', serif;
+   text-align: center;
+   img {
+     width: 75%;
+     height: 75%;
+     margin-bottom: 30px;
+   }
+ }
+
+ body {
+   background-color: #B8B07F;
+   position: relative;
+ }
+
+.nav {
+  color: white;
+  background-color: black;
+  font-family: 'Playfair Display SC', serif;
+}
+.nav-pills a {
+  color: white;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.nav-pills li {
+  color: white;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-right: 60px !important;
+
+}
+.dropdown-menu {
+  background-color: black;
+  color: white;
+}
+
+.rotateRight {
+  // padding-left: 15px;
+-moz-transform: rotate(25deg);  /* FF3.5+ */
+ -o-transform: rotate(25deg);  /* Opera 10.5 */
+ -webkit-transform: rotate(25deg);  /* Saf3.1+, Chrome */
+ -webkit-transform-origin: 0 0 ;
+ filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.90);  /*IE6,IE7 */
+ -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.090)";  /* IE8 */
+ }
+
+ .rotateLeft{
+ -moz-transform: rotate(-10deg);  /* FF3.5+ */
+  -o-transform: rotate(-10deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(-10deg);  /* Saf3.1+, Chrome */
+  -webkit-transform-origin: 0 0 ;
+  filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.90);  /*IE6,IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.090)";  /* IE8 */
+  }
+
+
+#suspects {
+  text-align: center;
+  h1 {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    font-family: 'Playfair Display SC', serif;
+  }
+  h3 {
+    font-family: 'Playfair Display SC', serif;
+  }
+  img {
+    margin-top: 0px;
+    width: 20%;
+    height: 20%;
+  }
+}
