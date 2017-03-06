@@ -1,18 +1,20 @@
 <div id="navbar-example">
-  <ul class="nav nav-pills">
+  <div class="container-fluid">
+  <ul class="nav nav-pills navbar-fixed-top">
       <li class="dropdown navbar-right">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suspects</a>
          <ul class="dropdown-menu">
            <a class="dropdown-item" href="#drew">Drew Anderson</a>
            <a class="dropdown-item" href="#marissa">Marissa Foster</a>
-           <a class="dropdown-item">President Stewart</a>
+           <a class="dropdown-item" href="#stewart">President Stewart</a>
            <a class="dropdown-item">Stan Boyle</a><br/>
            <a class="dropdown-item">Alysha Jones</a>
          </ul>
       </li>
-    <li class="navbar-right"><a href="#author_header" id="story">The Author</a></li>
+    <li class="navbar-right"><a href="#author_header">Author</a></li>
     <li class="navbar-right"><a href="#breaking_header">Story</a></li>
   </ul>
+</div>
 </div>
 <div id="bookcover">
   <h1>The Classifieds of Drew Anderson</h1>
@@ -21,25 +23,25 @@
 <div class="center">
 <a href="http://amazon.com" class="btn btn-primary btn-lg">Buy on Kindle</a>
 </div>
-<div id="breaking_header">
-  <h1 class="break">Breaking</h1>
-  <h1 class="breaking">News</h1>
-  <h4>Not All Headlines Are Created Equal</h4>
+<div id="story">
+  <div id="breaking_header">
+    <h1 class="break">Breaking</h1>
+    <h1 class="breaking">News</h1>
+    <h4>Not All Headlines Are Created Equal</h4>
+  </div>
+  <div id="breaking_paragraph">
+    <p>Molded by economic suffering, lake effect snow, and a raging football problem, Production News knows what matters most to Buffalonians. Local news has flourished for decades in Buffalo, but in the digital age, is crumbling. Small town values have lost to all glamour, no value headlines. The News Group is the new corporate kahuna in town.</p>
+    <p>As Production News strategizes to rebound from financial and subscriber loss, a national investigation jeopardizes the paper’s impartial legacy. At the front of the chaos is Drew Anderson, manager of the archaic classifieds section. For Drew, and most employees at Production, the workday is a fog, polluted by secluded, aristocratic decisions. But when tragic events appear to have a home in the classifieds, getting the scoop means the difference between leaking the truth and advancing the alternative.</p>
+    <p>While undercover, the clarity of Drew’s intention is continually blurred by the pervasive media circus and hardened by deceit. Everyone is unquestionably a suspect. A deeper purpose auspiciously reveals itself as the end draws closer. Drew knows that if he can keep his eyes and ears open, he may rescue Buffalo from forever surrendering to fiction.</p>
+    <span>In an age of fakes,</span>
+    <span id="breaking_italic">The Classifieds of Drew Anderson</span>
+    <span>speaks to the inner reporter in all of us.</span>
+    <p id="breaking_bold">Can the truth and the front page ever be the same?</p>
+  </div>
 </div>
-<div id="breaking_paragraph">
-  <p>Molded by economic suffering, lake effect snow, and a raging football problem, Production News knows what matters most to Buffalonians. Local news has flourished for decades in Buffalo, but in the digital age, is crumbling. Small town values have lost to all glamour, no value headlines. The News Group is the new corporate kahuna in town.</p>
-  <p>As Production News strategizes to rebound from financial and subscriber loss, a national investigation jeopardizes the paper’s impartial legacy. At the front of the chaos is Drew Anderson, manager of the archaic classifieds section. For Drew, and most employees at Production, the workday is a fog, polluted by secluded, aristocratic decisions. But when tragic events appear to have a home in the classifieds, getting the scoop means the difference between leaking the truth and advancing the alternative.</p>
-  <p>While undercover, the clarity of Drew’s intention is continually blurred by the pervasive media circus and hardened by deceit. Everyone is unquestionably a suspect. A deeper purpose auspiciously reveals itself as the end draws closer. Drew knows that if he can keep his eyes and ears open, he may rescue Buffalo from forever surrendering to fiction.</p>
-  <span>In an age of fakes,</span>
-  <span id="breaking_italic">The Classifieds of Drew Anderson</span>
-  <span>speaks to the inner reporter in all of us.</span>
-  <p id="breaking_bold">Can the truth and the front page ever be the same?</p>
-</div>
-<div id="author_header">
-  <h1>Meet The Author</h1>
-</div>
-<%= image_tag "author.jpg", class:"author_img" %>
 <div id="author">
+  <h1 id="author_header">Meet The Author</h1>
+  <%= image_tag "author.jpg", class:"author_img" %>
   <p>A longtime resident of the outside, Lee Devier writes while looking in. Originally a place of refuge, writing has transformed into an obsession to map if and where loneliness and awareness intersect. Behind each of her quests is the fireproof belief that it’s easy to think and harder to feel.</p>
   <p>For distraction, Lee listens to Kayne throwbacks, sleeps with her nightmares, and plays with metaphors while in transit.</p>
   <p>She lives in a major metropolitan city.</p>
@@ -61,6 +63,13 @@
     <p>BACKROUND: Born into small town supremacy as the daughter of Buffalo’s Mattress King and current marketing goddess at Production News</p>
     <p>MOTIVE: A selfie, checked in @ --- the TOP (previously the Glass Ceiling)</p>
     <p>VICE: Cornell graduates layered in Patagonia i.e. ghosts of boyfriends past</p>
+  </div>
+  <div id="president_s">
+    <%= image_tag "stewart.jpg", id:"stewart" %>
+    <h3 id="suspect_header">President Stewart</h3>
+    <p>BACKROUND: Son of Jeff Stewart, the founding father of Production News, and current poster boy for Buffalo vs. the World</p>
+    <p>MOTIVE: Steer Production News from becoming a 501(c)</p>
+    <p>VICE: Listening to Ani Difranco in the Mighty Taco parking lot</p>
   </div>
 </div>
 <script>

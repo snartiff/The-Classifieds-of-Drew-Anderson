@@ -15,21 +15,25 @@
  @import "bootstrap";
 
  #author {
+   h1 {
+     padding-top: 50px;
+     font-family: 'Playfair Display SC', serif;
+     text-align: center;
+   }
     font-family: 'Cormorant Garamond', serif;
     text-align: justify;
     margin: 0 auto;
     width: 30em;
- }
-
- #background {
-   font-family: 'Cormorant Garamond', serif;
-   font-weight: 900;
-   text-align: justify;
-   margin: 0 auto;
-   width: 30em;
-   #suspect_header {
-     text-align: center;
-   }
+    @media screen and (max-width: 768px) {
+      font-size: 75%;
+      h1 {
+      font-size: 175%;
+      }
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
  }
 
  .btn {
@@ -41,6 +45,9 @@
   border-color: black;
   border-width: 2px;
   font-family: 'Playfair Display SC', serif;
+  @media screen and (max-width: 768px) {
+    font-size: 75%;
+  }
  }
 
  .btn:hover {
@@ -63,44 +70,61 @@
    border-radius: 50%;
  }
 
- #author_header {
-   font-family: 'Playfair Display SC', serif;
-   text-align: center;
-   padding-top: 90px;
- }
-
 #author_italic {
   font-style: italic;
   display: inline;
 }
 
- #breaking_header {
-   padding-top: 50px;
-   font-family: 'Playfair Display SC', serif;
-   text-align: center;
-   h1 {
-     display: inline-flex;
-   }
- }
-
-#breaking_paragraph {
-   font-family: 'Cormorant Garamond', serif;
-   text-align: justify;
-   margin: 0 auto;
-   width: 30em;
-   #breaking_bold {
-     margin-top: 5px;
-     font-weight: bolder;
-   }
-   #breaking_italic {
-     font-style: italic;
-     display: inline;
-   }
- }
+#story {
+  #breaking_header {
+    padding-top: 50px;
+    font-family: 'Playfair Display SC', serif;
+    text-align: center;
+    h1 {
+      display: inline-flex;
+    }
+  }
+ #breaking_paragraph {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: justify;
+    margin: 0 auto;
+    width: 30em;
+    #breaking_bold {
+      margin-top: 5px;
+      font-weight: bolder;
+    }
+    #breaking_italic {
+      font-style: italic;
+      display: inline;
+    }
+  }
+    @media screen and (max-width: 768px) {
+      font-size: 75%;
+      #breaking_header {
+        .break {
+          font-size: 175%;
+        }
+        .breaking {
+          font-size: 175%;
+        }
+        h4 {
+          font-size: 100%;
+        }
+      }
+    }
+}
 
  #bookcover {
    font-family: 'Playfair Display SC', serif;
    text-align: center;
+   h1 {
+     font-size: 4em;
+   }
+   @media screen and (max-width: 768px) {
+    h1{
+        font-size: 125%;
+    }
+  }
    img {
      width: 75%;
      height: 75%;
@@ -117,6 +141,10 @@
   color: white;
   background-color: black;
   font-family: 'Playfair Display SC', serif;
+  @media screen and (max-width: 768px) {
+       display: inline-flex;
+       font-size: 75%;
+ }
 }
 .nav-pills a {
   color: white;
@@ -137,13 +165,15 @@
 }
 
 .rotateRight {
-  // padding-left: 15px;
 -moz-transform: rotate(25deg);  /* FF3.5+ */
  -o-transform: rotate(25deg);  /* Opera 10.5 */
  -webkit-transform: rotate(25deg);  /* Saf3.1+, Chrome */
  -webkit-transform-origin: 0 0 ;
  filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.90);  /*IE6,IE7 */
  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.090)";  /* IE8 */
+   @media screen and (max-width: 768px) {
+          font-size: 125%;
+   }
  }
 
  .rotateLeft{
@@ -153,37 +183,62 @@
   -webkit-transform-origin: 0 0 ;
   filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.90);  /*IE6,IE7 */
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.090)";  /* IE8 */
+    @media screen and (max-width: 768px) {
+           font-size: 125%;
+    }
   }
 
 #suspects {
+  text-align: center;
+  h1 {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    font-family: 'Playfair Display SC', serif;
+  }
+  h3 {
     text-align: center;
-    h1 {
-      padding-top: 50px;
-      padding-bottom: 0px;
-      font-family: 'Playfair Display SC', serif;
-    }
-    h3 {
-      text-align: center;
-      font-family: 'Playfair Display SC', serif;
-    }
-    p {
-      margin: 0 auto;
-      font-family: 'Cormorant Garamond', serif;
-      text-align: justify;
-      margin: 0 auto;
-      width: 30em;
-    }
+    font-family: 'Playfair Display SC', serif;
+  }
+  p {
+    font-size: 125%;
+    padding-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: justify;
+    margin: 0 auto;
+    width: 30em;
+  }
+  #marissa_f {
     img {
-      margin-top: 0px;
-      width: 20%;
-      height: 20%;
+      margin-top: 20px;
+      width: 15%;
+      height: 15%;
     }
-    #drew_a {
-      img {
-        margin-top: 20px;
-        margin-bottom: 0px;
-        width: 20%;
-        height: 20%;
-      }
+  }
+  #drew_a {
+    img {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 15%;
+      height: 15%;
     }
+  }
+  #president_s {
+    img {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 15%;
+      height: 15%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+   h1{
+       font-size: 125%;
+   }
+   h3 {
+     font-size: 100%;
+   }
+   p {
+     font-size: 75%;
+   }
+ }
 }
