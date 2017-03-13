@@ -15,24 +15,24 @@
  @import "bootstrap";
 
  #author {
+   font-family: 'Cormorant Garamond', serif;
+   text-align: justify;
+   margin: 0 auto;
+   width: 30em;
+   .author_img {
+     padding-top: 10px;
+     margin: auto;
+     display: block;
+     width: 100%;
+     height: 100%;
+   }
    h1 {
      padding-top: 50px;
      font-family: 'Playfair Display SC', serif;
      text-align: center;
    }
-    font-family: 'Cormorant Garamond', serif;
-    text-align: justify;
-    margin: 0 auto;
-    width: 30em;
     @media screen and (max-width: 768px) {
-      font-size: 75%;
-      h1 {
-      font-size: 175%;
-      }
-      img {
-        width: 50%;
-        height: 50%;
-      }
+      width: 25em;
     }
  }
 
@@ -62,13 +62,6 @@
    margin-bottom: 40px !important;
    padding-bottom: 100px !important;
  }
- .author_img {
-   padding-top: 10px;
-   padding-bottom: 30px;
-   margin: auto;
-   display: block;
-   border-radius: 50%;
- }
 
 #author_italic {
   font-style: italic;
@@ -76,12 +69,18 @@
 }
 
 #story {
+  text-align: center;
   #breaking_header {
     padding-top: 50px;
     font-family: 'Playfair Display SC', serif;
-    text-align: center;
     h1 {
       display: inline-flex;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+    #breaking {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
     }
   }
  #breaking_paragraph {
@@ -98,20 +97,15 @@
       display: inline;
     }
   }
-    @media screen and (max-width: 768px) {
-      font-size: 75%;
-      #breaking_header {
-        .break {
-          font-size: 175%;
-        }
-        .breaking {
-          font-size: 175%;
-        }
-        h4 {
-          font-size: 100%;
-        }
-      }
+  @media screen and (max-width: 768px) {
+    padding-left: 15px;
+    p {
+      width: 25em;
     }
+    span {
+      width: 25em;
+    }
+  }
 }
 
  #bookcover {
@@ -120,16 +114,20 @@
    h1 {
      font-size: 4em;
    }
-   @media screen and (max-width: 768px) {
-    h1{
-        font-size: 125%;
-    }
-  }
    img {
      width: 75%;
      height: 75%;
      margin-bottom: 30px;
    }
+   @media screen and (max-width: 768px) {
+    h1{
+        font-size: 3em;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
  }
 
  body {
@@ -143,7 +141,7 @@
   font-family: 'Playfair Display SC', serif;
   @media screen and (max-width: 768px) {
        display: inline-flex;
-       font-size: 75%;
+      //  font-size: 75%;
  }
 }
 .nav-pills a {
@@ -171,9 +169,9 @@
  -webkit-transform-origin: 0 0 ;
  filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.90);  /*IE6,IE7 */
  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.090)";  /* IE8 */
-   @media screen and (max-width: 768px) {
-          font-size: 125%;
-   }
+  //  @media screen and (max-width: 768px) {
+  //         font-size: 125%;
+  //  }
  }
 
  .rotateLeft{
@@ -183,9 +181,9 @@
   -webkit-transform-origin: 0 0 ;
   filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.90);  /*IE6,IE7 */
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.090)";  /* IE8 */
-    @media screen and (max-width: 768px) {
-           font-size: 125%;
-    }
+    // @media screen and (max-width: 768px) {
+    //        font-size: 125%;
+    // }
   }
 
 #suspects {
@@ -210,35 +208,29 @@
   #marissa_f {
     img {
       margin-top: 20px;
-      width: 15%;
-      height: 15%;
+      width: 50%;
+      height: 50%;
     }
   }
   #drew_a {
     img {
       margin-top: 20px;
       margin-bottom: 0px;
-      width: 15%;
-      height: 15%;
+      width: 50%;
+      height: 50%;
     }
   }
   #president_s {
     img {
       margin-top: 20px;
       margin-bottom: 0px;
-      width: 15%;
-      height: 15%;
+      width: 50%;
+      height: 50%;
     }
   }
   @media screen and (max-width: 768px) {
-   h1{
-       font-size: 125%;
-   }
-   h3 {
-     font-size: 100%;
-   }
-   p {
-     font-size: 75%;
-   }
+    p {
+      width: 20em;
+    }
  }
 }
