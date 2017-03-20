@@ -2,13 +2,13 @@
   <div class="container-fluid">
   <ul class="nav nav-pills navbar-fixed-top">
       <li class="dropdown navbar-right">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suspects</a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Suspects</a>
          <ul class="dropdown-menu">
            <a class="dropdown-item" href="#drew">Drew Anderson</a>
            <a class="dropdown-item" href="#marissa">Marissa Foster</a>
            <a class="dropdown-item" href="#stewart">President Stewart</a>
-           <a class="dropdown-item">Stan Boyle</a><br/>
-           <a class="dropdown-item">Alysha Jones</a>
+           <a class="dropdown-item" href="#stan">Stan Boyle</a><br/>
+           <a class="dropdown-item" href="#alysha">Alysha Jones</a>
          </ul>
       </li>
     <li class="navbar-right"><a href="#author_header">Author</a></li>
@@ -21,7 +21,7 @@
   <%= image_tag "bookcover.jpg" %>
 </div>
 <div class="center">
-<a href="http://amazon.com" class="btn btn-primary btn-lg">Buy on Kindle</a>
+  <%= link_to image_tag("kindle_button.jpg", class: "kindle"), "https://www.amazon.com", target: :_blank %>
 </div>
 <div id="story">
   <div id="breaking_header">
@@ -34,7 +34,7 @@
     <p>As Production News strategizes to rebound from financial and subscriber loss, a national investigation jeopardizes the paper’s impartial legacy. At the front of the chaos is Drew Anderson, manager of the archaic classifieds section. For Drew, and most employees at Production, the workday is a fog, polluted by secluded, aristocratic decisions. But when tragic events appear to have a home in the classifieds, getting the scoop means the difference between leaking the truth and advancing the alternative.</p>
     <p>While undercover, the clarity of Drew’s intention is continually blurred by the pervasive media circus and hardened by deceit. Everyone is unquestionably a suspect. A deeper purpose auspiciously reveals itself as the end draws closer. Drew knows that if he can keep his eyes and ears open, he may rescue Buffalo from forever surrendering to fiction.</p>
     <span>In an age of fakes,</span>
-    <span id="breaking_italic">The Classifieds of Drew Anderson</span></br>
+    <span id="breaking_italic">The Classifieds of Drew Anderson</span>
     <span>speaks to the inner reporter in all of us.</span>
     <p id="breaking_bold">Can the truth and the front page ever be the same?</p>
   </div>
@@ -54,25 +54,42 @@
   <div id ="drew_a">
     <%= image_tag "drew.jpg", id:"drew" %>
     <h3 id="suspect_header">Drew Anderson</h3>
-    <p>BACKROUND: The quintessential apathetic, all-thrills bachelor of the New Era unimpressed by corporate commandments</p>
+    <p>BACKGROUND: The quintessential apathetic, all-thrills bachelor of the New Era unimpressed by corporate commandments</p>
     <p>MOTIVE: Publish the biggest FU of news history</p>
     <p>VICE: A dying grandmother with unrealistic requests</p>
   </div>
   <div id="marissa_f">
     <%= image_tag "marisa.jpg", id:"marissa" %>
     <h3 id="suspect_header">Marissa Foster</h3>
-    <p>BACKROUND: Born into small town supremacy as the daughter of Buffalo’s Mattress King and current marketing goddess at Production News</p>
+    <p>BACKGROUND: Born into small town supremacy as the daughter of Buffalo’s Mattress King and current marketing goddess at Production News</p>
     <p>MOTIVE: A selfie, checked in @ --- the TOP (previously the Glass Ceiling)</p>
     <p>VICE: Cornell graduates layered in Patagonia i.e. ghosts of boyfriends past</p>
   </div>
   <div id="president_s">
     <%= image_tag "stewart.jpg", id:"stewart" %>
     <h3 id="suspect_header">President Stewart</h3>
-    <p>BACKROUND: Son of Jeff Stewart, the founding father of Production News, and current poster boy for Buffalo vs. the World</p>
+    <p>BACKGROUND: Son of Jeff Stewart, the founding father of Production News, and current poster boy for Buffalo vs. the World</p>
     <p>MOTIVE: Steer Production News from becoming a 501(c)</p>
     <p>VICE: Listening to Ani Difranco in the Mighty Taco parking lot</p>
   </div>
+  <div id="stan_b">
+    <%= image_tag "stan.jpg", id:"stan" %>
+    <h3 id="suspect_header">Stan Boyle</h3>
+    <p>BACKGROUND: Buffalo’s Special Investigations wolf with an eye for Fashion Week overstock</p>
+    <p>MOTIVE: Perpetuate the conspiracy heard round the world</p>
+    <p>VICE: Graffiti on Reed Street</p>
+  </div>
+  <div id="alysha_j">
+    <%= image_tag "alysha.jpg", id:"alysha" %>
+    <h3 id="suspect_header">Alysha Jones</h3>
+    <p>BACKGROUND: Faking it until she makes it, The News Group’s favorite hipster and top reporter</p>
+    <p>MOTIVE: Write for the National Enquirer, PETA, or both</p>
+    <p>VICE: Mason jar parties</p>
+  </div>
+  <div id="share"></div>
 </div>
+<script src="jquery.js"></script>
+<script src="jssocials.min.js"></script>
 <script>
 //Function that rotates breaking news header after clicking on story
   $( "#navbar-example a[href*=breaking_header]" ).on( "click", function() {
@@ -90,9 +107,17 @@
 //Sets scrollspy target to be navbar
 $('body').scrollspy({ target: '#navbar-example', offset: 50 })
 
+// Social media buttons
+$("#share").jsSocials({
+    url: "http://www.google.com",
+    shares: ["twitter", "facebook", "pinterest"],
+    shareIn: "popup",
+    showLabel: true,
+    showCount: true
+});
+
 //Enable smooth scrolling
 $("#navbar-example a").on('click', function(event) {
-
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
     // Prevent default anchor click behavior
