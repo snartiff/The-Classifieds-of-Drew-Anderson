@@ -17,8 +17,9 @@
 </div>
 </div>
 <div id="bookcover">
+  <%= image_tag "newspaper.png", class: "newspaper" %>
   <h1>The Classifieds of Drew Anderson</h1>
-  <%= image_tag "bookcover.jpg" %>
+  <%= image_tag "bookcover.jpg", class: "cover" %>
 </div>
 <div class="center">
   <%= link_to image_tag("kindle_button.jpg", class: "kindle"), "https://www.amazon.com", target: :_blank %>
@@ -102,6 +103,13 @@
           }, 2000);
     }, 1300)
   })
+
+  $(".newspaper")
+.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+ function(e){
+    $(".newspaper").css("opacity", "0");
+    $(this).off(e);
+ });
 
 
 //Sets scrollspy target to be navbar

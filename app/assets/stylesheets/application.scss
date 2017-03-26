@@ -113,6 +113,9 @@
  #bookcover {
    font-family: 'Playfair Display SC', serif;
    text-align: center;
+   position: relative;
+   div {
+   }
    h1 {
      font-size: 4em;
      font-weight: 900;
@@ -122,6 +125,44 @@
      height: 75%;
      margin-bottom: 15px;
    }
+
+   @keyframes newspaper {
+     0%   {
+       top: 0px;
+       left: 0px;
+     }
+    25%  {
+      top: 200px;
+      left: 1000px;
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+      transform: rotate(180deg);
+    }
+    50%  {
+      top: 400px;
+      left: 0px;
+      // -ms-transform: rotate(270deg); /* IE 9 */
+      // -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+      // transform: rotate(270deg);
+    }
+    75%  {top: 600px; left: 1000px;}
+    100% {top: 800px; left: 0px;}
+   }
+   .newspaper {
+     float:left;
+     position: relative;
+     z-index: 1;
+     width: 10%;
+     height: 10%;
+     animation-name: newspaper;
+     animation-duration: 12s;
+    //  -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    //  animation-iteration-count: 3;
+   }
+   .cover {
+     z-index: -1;
+   }
+
    @media screen and (max-width: 768px) {
     h1{
         font-size: 2.5em;
@@ -171,6 +212,7 @@
   padding-right: 60px !important;
 
 }
+
 .dropdown-menu {
   background-color: black;
   color: white;
@@ -217,7 +259,7 @@
     font-family: 'Cormorant Garamond', serif;
     text-align: justify;
     margin: 0 auto;
-    width: 30em;
+    width: 20em;
   }
   #marissa_f {
     img {
@@ -260,7 +302,7 @@
   }
   @media screen and (max-width: 768px) {
     p {
-      width: 20em;
+      width: 25em;
     }
  }
  #share {
