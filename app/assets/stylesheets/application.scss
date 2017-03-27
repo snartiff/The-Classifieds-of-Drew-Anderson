@@ -13,23 +13,29 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "shares";
 
  #author {
-    font-family: 'Cormorant Garamond', serif;
-    text-align: justify;
-    margin: 0 auto;
-    width: 30em;
- }
-
- #background {
    font-family: 'Cormorant Garamond', serif;
-   font-weight: 900;
    text-align: justify;
    margin: 0 auto;
    width: 30em;
-   #suspect_header {
+   .author_img {
+     padding-top: 10px;
+     padding-bottom: 20px;
+     margin: auto;
+     display: block;
+     width: 100%;
+     height: 100%;
+   }
+   h1 {
+     padding-top: 50px;
+     font-family: 'Playfair Display SC', serif;
      text-align: center;
    }
+    @media screen and (max-width: 768px) {
+      width: 25em;
+    }
  }
 
  .btn {
@@ -41,6 +47,9 @@
   border-color: black;
   border-width: 2px;
   font-family: 'Playfair Display SC', serif;
+  @media screen and (max-width: 768px) {
+    font-size: 75%;
+  }
  }
 
  .btn:hover {
@@ -55,57 +64,125 @@
    margin-bottom: 40px !important;
    padding-bottom: 100px !important;
  }
- .author_img {
-   padding-top: 10px;
-   padding-bottom: 30px;
-   margin: auto;
-   display: block;
-   border-radius: 50%;
- }
-
- #author_header {
-   font-family: 'Playfair Display SC', serif;
-   text-align: center;
-   padding-top: 90px;
- }
 
 #author_italic {
   font-style: italic;
   display: inline;
 }
 
- #breaking_header {
-   padding-top: 50px;
-   font-family: 'Playfair Display SC', serif;
-   text-align: center;
-   h1 {
-     display: inline-flex;
-   }
- }
-
-#breaking_paragraph {
-  font-family: 'Cormorant Garamond', serif;
-   text-align: justify;
-   margin: 0 auto;
-   width: 30em;
-   #breaking_bold {
-     margin-top: 5px;
-     font-weight: bolder;
-   }
-   #breaking_italic {
-     font-style: italic;
-     display: inline;
-   }
- }
+#story {
+  text-align: center;
+  #breaking_header {
+    padding-top: 50px;
+    font-family: 'Playfair Display SC', serif;
+    h1 {
+      display: inline-flex;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+    #breaking {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+  }
+ #breaking_paragraph {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: justify;
+    margin: 0 auto;
+    width: 30em;
+    #breaking_bold {
+      margin-top: 5px;
+      font-weight: bolder;
+    }
+    #breaking_italic {
+      font-style: italic;
+      display: inline;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 15px;
+    p {
+      width: 25em;
+    }
+    span {
+      width: 25em;
+    }
+  }
+}
 
  #bookcover {
    font-family: 'Playfair Display SC', serif;
    text-align: center;
+   position: relative;
+   div {
+   }
+   h1 {
+     font-size: 4em;
+     font-weight: 900;
+   }
    img {
      width: 75%;
      height: 75%;
-     margin-bottom: 30px;
+     margin-bottom: 15px;
    }
+
+   @keyframes newspaper {
+     0%   {
+       top: 0px;
+       left: 0px;
+     }
+    25%  {
+      top: 200px;
+      left: 1000px;
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+      transform: rotate(180deg);
+    }
+    50%  {
+      top: 400px;
+      left: 0px;
+      // -ms-transform: rotate(270deg); /* IE 9 */
+      // -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+      // transform: rotate(270deg);
+    }
+    75%  {top: 600px; left: 1000px;}
+    100% {top: 800px; left: 0px;}
+   }
+   .newspaper {
+     float:left;
+     position: relative;
+     z-index: 1;
+     width: 10%;
+     height: 10%;
+     animation-name: newspaper;
+     animation-duration: 12s;
+    //  -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    //  animation-iteration-count: 3;
+   }
+   .cover {
+     z-index: -1;
+   }
+
+   @media screen and (max-width: 768px) {
+    h1{
+        font-size: 2.5em;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+ }
+
+ .kindle {
+    margin-top: 0px;
+    padding-top: 0px;
+     width: 18%;
+     height: 18%;
+     @media screen and (max-width: 768px) {
+       width: 40%;
+       height: 40%;
+    }
  }
 
  body {
@@ -117,6 +194,10 @@
   color: white;
   background-color: black;
   font-family: 'Playfair Display SC', serif;
+  @media screen and (max-width: 768px) {
+       display: inline-flex;
+      //  font-size: 75%;
+ }
 }
 .nav-pills a {
   color: white;
@@ -131,19 +212,22 @@
   padding-right: 60px !important;
 
 }
+
 .dropdown-menu {
   background-color: black;
   color: white;
 }
 
 .rotateRight {
-  // padding-left: 15px;
 -moz-transform: rotate(25deg);  /* FF3.5+ */
  -o-transform: rotate(25deg);  /* Opera 10.5 */
  -webkit-transform: rotate(25deg);  /* Saf3.1+, Chrome */
  -webkit-transform-origin: 0 0 ;
  filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.90);  /*IE6,IE7 */
  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.090)";  /* IE8 */
+  //  @media screen and (max-width: 768px) {
+  //         font-size: 125%;
+  //  }
  }
 
  .rotateLeft{
@@ -153,8 +237,10 @@
   -webkit-transform-origin: 0 0 ;
   filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.90);  /*IE6,IE7 */
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.090)";  /* IE8 */
+    // @media screen and (max-width: 768px) {
+    //        font-size: 125%;
+    // }
   }
-
 
 #suspects {
   text-align: center;
@@ -164,11 +250,72 @@
     font-family: 'Playfair Display SC', serif;
   }
   h3 {
+    text-align: center;
     font-family: 'Playfair Display SC', serif;
   }
-  img {
-    margin-top: 0px;
-    width: 20%;
-    height: 20%;
+  p {
+    font-size: 125%;
+    padding-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: justify;
+    margin: 0 auto;
+    width: 20em;
   }
+  #marissa_f {
+    img {
+      margin-top: 20px;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  #drew_a {
+    img {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  #president_s {
+    img {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  #stan_b {
+    img {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  #alysha_j {
+    img {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    p {
+      width: 25em;
+    }
+ }
+ #share {
+   margin-top: 30px;
+ }
+ .jssocials-share-link {
+   font-family: 'Playfair Display SC', serif;
+   font-size: 14px;
+ }
+ .jssocials-share-count {
+   background-color: white;
+ }
+ .jssocials-share-count-box {
+   background-color: white;
+ }
 }
