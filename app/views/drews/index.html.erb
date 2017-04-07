@@ -1,20 +1,20 @@
 <div id="navbar-example">
   <div class="container-fluid">
-  <ul class="nav nav-pills navbar-fixed-top">
-      <li class="dropdown navbar-right">
-        <a class="dropdown-toggle" data-toggle="dropdown">Suspects</a>
-         <ul class="dropdown-menu">
-           <a class="dropdown-item" href="#drew">Drew Anderson</a>
-           <a class="dropdown-item" href="#marissa">Marissa Foster</a>
-           <a class="dropdown-item" href="#stewart">President Stewart</a>
-           <a class="dropdown-item" href="#stan">Stan Boyle</a><br/>
-           <a class="dropdown-item" href="#alysha">Alysha Jones</a>
-         </ul>
-      </li>
-    <li class="navbar-right"><a href="#author_header">Author</a></li>
-    <li class="navbar-right"><a href="#breaking_header">Story</a></li>
-  </ul>
-</div>
+    <ul class="nav nav-pills navbar-fixed-top">
+        <li class="dropdown navbar-right">
+          <a class="dropdown-toggle" data-toggle="dropdown">Suspects</a>
+           <ul class="dropdown-menu">
+             <a class="dropdown-item" href="#drew">Drew Anderson</a>
+             <a class="dropdown-item" href="#marissa">Marissa Foster</a>
+             <a class="dropdown-item" href="#stewart">President Stewart</a>
+             <a class="dropdown-item" href="#stan">Stan Boyle</a><br/>
+             <a class="dropdown-item" href="#alysha">Alysha Jones</a>
+           </ul>
+        </li>
+      <li class="navbar-right"><a href="#author_header">Author</a></li>
+      <li class="navbar-right"><a href="#breaking_header">Story</a></li>
+    </ul>
+  </div>
 </div>
 <div id="bookcover">
   <%= image_tag "newspaper.png", class: "newspaper" %>
@@ -89,21 +89,32 @@
   </div>
   <div id="share"></div>
 </div>
-<script src="jquery.js"></script>
-<script src="jssocials.min.js"></script>
 <script>
 //Function that rotates breaking news header after clicking on story
-  $( "#navbar-example a[href*=breaking_header]" ).on( "click", function() {
+  $( "#navbar-example a[href*=breaking_header]" ).on( "click", function(event) {
     setTimeout(function() {
-          $('.breaking').addClass('rotateRight');
-          $('.break').addClass('rotateLeft');
-          setTimeout(function() {
-            $('.breaking').removeClass('rotateRight');
-            $('.break').removeClass('rotateLeft');
-          }, 2000);
+          // $('.breaking').addClass('rotateRight');
+          // $('.break').addClass('rotateLeft');
+          // setTimeout(function() {
+          //   $('.breaking').removeClass('rotateRight');
+          //   $('.break').removeClass('rotateLeft');
+          // }, 3000);
+            $('.breaking_header, .breaking_paragraph, .break, .breaking').css("position", 'relative');
+            $('.breaking').addClass('rotateRight');
+            $('.break').addClass('rotateLeft');
+            $('.breaking').animate({
+              bottom: "-=650"
+            });
+            setTimeout(function() {
+              $('.breaking').animate({
+                bottom: "+=650"
+              });
+              $('.breaking').removeClass('rotateRight');
+              $('.break').removeClass('rotateLeft');
+            }, 3000);
     }, 1300)
   })
-
+//After newspaper animation has ended, hide the newspaper png
   $(".newspaper")
 .on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
  function(e){
@@ -111,11 +122,10 @@
     $(this).off(e);
  });
 
-
 //Sets scrollspy target to be navbar
 $('body').scrollspy({ target: '#navbar-example', offset: 50 })
 
-// Social media buttons
+// jQuery ocial media buttons via jsSocials
 $("#share").jsSocials({
     url: "http://www.google.com",
     shares: ["twitter", "facebook", "pinterest"],
