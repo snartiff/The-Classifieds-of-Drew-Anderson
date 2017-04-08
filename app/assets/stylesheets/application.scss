@@ -112,10 +112,6 @@
       position: relative;
     }
   }
-  // #breaking_header:target {
-  //   animation-name: drop;
-  //   animation-duration: 5s;
-  // }
  #breaking_paragraph {
     font-family: 'Cormorant Garamond', serif;
     font-size: 125%;
@@ -135,9 +131,6 @@
     }
   }
   @media screen and (max-width: 768px) {
-    #breaking-header {
-      width: 10em;
-    }
     #breaking_paragraph {
       width: 20em;
     }
@@ -251,9 +244,6 @@
   @media screen and (max-width: 768px) {
        display: inline-flex;
        font-size: 100%;
-       .nav-pills li {
-         padding-right: 30px !important;
-       }
  }
 }
 .nav-pills a {
@@ -267,7 +257,7 @@
   display: inline-flex;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  padding-right: 60px !important;
+  padding-right: 50px !important;
 }
 
 .dropdown-menu {
