@@ -93,12 +93,6 @@
 //Function that rotates breaking news header after clicking on story
   $( "#navbar-example a[href*=breaking_header]" ).on( "click", function(event) {
     setTimeout(function() {
-          // $('.breaking').addClass('rotateRight');
-          // $('.break').addClass('rotateLeft');
-          // setTimeout(function() {
-          //   $('.breaking').removeClass('rotateRight');
-          //   $('.break').removeClass('rotateLeft');
-          // }, 3000);
             $('.breaking_header, .breaking_paragraph, .break, .breaking').css("position", 'relative');
             $('.breaking').addClass('rotateRight');
             $('.break').addClass('rotateLeft');

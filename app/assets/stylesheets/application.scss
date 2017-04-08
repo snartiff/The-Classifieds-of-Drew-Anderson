@@ -58,7 +58,7 @@
      padding-bottom: 12px;
      font-size: 125%;
    }
-    @media screen and (max-width: 768px) {
+    @media (min-width: @screen-sm-min) {
       width: 25em;
     }
  }
@@ -72,7 +72,7 @@
   border-color: black;
   border-width: 2px;
   font-family: 'Playfair Display SC', serif;
-  @media screen and (max-width: 768px) {
+  @media (min-width: @screen-sm-min) {
     font-size: 75%;
   }
  }
@@ -134,7 +134,7 @@
       display: inline;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media (min-width: @screen-sm-min) {
     #breaking-header {
       width: 10em;
     }
@@ -181,7 +181,7 @@
     100% {top: 800px; left: -200px;}
    }
 
-  @media screen and (max-width: 768px) {
+  @media (min-width: @screen-sm-min) {
     @keyframes newspaper {
     0%   {
        top: 0px;
@@ -217,7 +217,7 @@
      z-index: -1;
    }
 
-   @media screen and (max-width: 768px) {
+   @media (min-width: @screen-sm-min) {
     h1{
         font-size: 2.5em;
     }
@@ -233,7 +233,7 @@
     padding-top: 0px;
      width: 18%;
      height: 18%;
-     @media screen and (max-width: 768px) {
+     @media (min-width: @screen-sm-min) {
        width: 40%;
        height: 40%;
     }
@@ -248,7 +248,7 @@
   color: white;
   background-color: black;
   font-family: 'Playfair Display SC', serif;
-  @media screen and (max-width: 768px) {
+  @media (min-width: @screen-sm-min) {
        display: inline-flex;
        font-size: 100%;
        .nav-pills li {
@@ -359,7 +359,7 @@
       height: 50%;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media (min-width: @screen-sm-min) {
     p {
       width: 20em;
     }
