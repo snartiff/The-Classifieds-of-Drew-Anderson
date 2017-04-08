@@ -212,7 +212,7 @@
 
    @media screen and (max-width: 768px) {
     h1{
-        font-size: 2.5em;
+        font-size: 3em;
     }
     img {
       width: 100%;
@@ -243,7 +243,7 @@
   font-family: 'Playfair Display SC', serif;
   @media screen and (max-width: 768px) {
        display: inline-flex;
-       font-size: 100%;
+       font-size: 110%;
  }
 }
 .nav-pills a {
@@ -304,7 +304,7 @@
   }
   p {
     font-size: 125%;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
     font-family: 'Cormorant Garamond', serif;
     text-align: justify;
     margin: 0 auto;
