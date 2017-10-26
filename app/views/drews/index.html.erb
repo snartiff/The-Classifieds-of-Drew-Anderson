@@ -31,21 +31,19 @@
     <h4>Not All Headlines Are Created Equal</h4>
   </div>
   <div id="breaking_paragraph">
-    <p>Molded by economic suffering, lake effect snow, and a raging football problem, Production News knows what matters most to Buffalonians. Local news has flourished for decades in Buffalo, but in the digital age, is crumbling. Small town values have lost to all glamour, no value headlines. The News Group is the new corporate kahuna in town.</p>
-    <p>As Production News strategizes to rebound from financial and subscriber loss, a national investigation jeopardizes the paper’s impartial legacy. At the front of the chaos is Drew Anderson, manager of the archaic classifieds section. For Drew, and most employees at Production, the workday is a fog, polluted by secluded, aristocratic decisions. But when tragic events appear to have a home in the classifieds, getting the scoop means the difference between leaking the truth and advancing the alternative.</p>
+    <p>After an eerie car crash, an investigation is launched into Production News that attempts to link the newspaper’s stories to similar events across the country. The investigation coupled with Production’s recent subscriber loss makes work anything but comfortable for current employees.</p>
+    <p>Drew Anderson resists the panic of his fellow colleagues with blatant indifference. But when the tragic events appear to have a home in the newspaper’s classifieds section, getting the scoop means the difference between leaking the truth and advancing the alternative. Drew knows that if he can keep his eyes and ears open, he may rescue Buffalo from forever surrendering to fiction.</p>
     <p>While undercover, the clarity of Drew’s intention is continually blurred by the pervasive media circus and hardened by deceit. Everyone is unquestionably a suspect. A deeper purpose auspiciously reveals itself as the end draws closer. Drew knows that if he can keep his eyes and ears open, he may rescue Buffalo from forever surrendering to fiction.</p>
     <span>In an age of fakes,</span>
-    <span id="breaking_italic">The Classifieds of Drew Anderson</span>
-    <span>speaks to the inner reporter in all of us.</span>
-    <p id="breaking_bold">Can the truth and the front page ever be the same?</p>
+    <p id="breaking_bold">can the truth and the front page ever be the same?</p>
   </div>
 </div>
 <div id="author">
   <h1 id="author_header">Meet The Author</h1>
   <div>
   <%= image_tag "lee_devier.jpg", class:"author_img" %>
-  <p>A longtime resident of the outside, Lee Devier writes while looking in. Originally a place of refuge, writing has transformed into an obsession to map if and where loneliness and awareness intersect. Behind each of her quests is the fireproof belief that it’s easy to think and harder to feel.</p>
-  <p>For distraction, Lee listens to Kayne throwbacks, sleeps with her nightmares, and plays with metaphors while in transit.</p>
+  <p>A longtime resident of the outside, Lee Deviar writes while looking in. Originally a place of refuge, writing has transformed into an obsession to map if and where loneliness and awareness intersect. Behind each of her quests is the fireproof belief that it’s easy to think and harder to feel.</p>
+  <p>For distraction, Lee listens to Kanye throwbacks, sleeps with her nightmares, and plays with metaphors while in transit.</p>
   <p>She lives in a major metropolitan city.</p>
   <span id="author_italic">The Classifieds of Drew Anderson</span>
   <span>is her first major literary work.</span>
@@ -90,6 +88,61 @@
   <div id="share"></div>
 </div>
 <script>
+var breakingAnimationComplete = false;
+var breakingBoldComplete = false;
+
+function scrollEventHandler() {
+  setTimeout(function() {
+          $('.breaking_header, .breaking_paragraph, .break, .breaking').css("position", 'relative');
+          $('.breaking').addClass('rotateRight');
+          $('.break').addClass('rotateLeft');
+          $('.breaking').animate({
+            bottom: "-=650"
+          });
+          setTimeout(function() {
+            $('.breaking').animate({
+              bottom: "+=650"
+            });
+            $('.breaking').removeClass('rotateRight');
+            $('.break').removeClass('rotateLeft');
+          }, 3000);
+  }, 1300)
+}
+
+function scrollEventHandler2() {
+    $('#breaking_bold').animate({fontSize: "50px"}, "slow");
+    setTimeout(function() {
+      $('#breaking_bold').animate({fontSize: "16px", display: "inline-flex"}, "slow");
+    }, 3000);
+}
+
+  document.addEventListener('scroll', function(e) {
+    var elementIsVisible = isScrolledIntoView(document.querySelector('#breaking_header'));
+    var elementIsVisible2 = isScrolledIntoView(document.querySelector('#breaking_bold'));
+
+    if (elementIsVisible && !breakingAnimationComplete) {
+      scrollEventHandler();
+      breakingAnimationComplete = true;
+    } else if (elementIsVisible2 && !breakingBoldComplete) {
+      scrollEventHandler2();
+      breakingBoldComplete = true;
+    } else {
+
+    }
+  });
+  // $(document).scroll(scrollEventHandler());
+
+function isScrolledIntoView(el) {
+    var elemTop = el.getBoundingClientRect().top;
+    var elemBottom = el.getBoundingClientRect().bottom;
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+}
+
+function unbindScrollEventHandler() {
+	$(document).unbind('scroll', scrollEventHandler);
+}
+
 //Function that rotates breaking news header after clicking on story
   $( "#navbar-example a[href*=breaking_header]" ).on( "click", function(event) {
     setTimeout(function() {
@@ -109,8 +162,7 @@
     }, 1300)
   })
 //After newspaper animation has ended, hide the newspaper png
-  $(".newspaper")
-.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+  $(".newspaper").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
  function(e){
     $(".newspaper").css("opacity", "0");
     $(this).off(e);
