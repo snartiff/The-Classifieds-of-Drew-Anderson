@@ -96,13 +96,15 @@ function scrollEventHandler() {
           $('.breaking_header, .breaking_paragraph, .break, .breaking').css("position", 'relative');
           $('.breaking').addClass('rotateRight');
           $('.break').addClass('rotateLeft');
+          // $('.breaking').css("margin-bottom", "650px");
           $('.breaking').animate({
             bottom: "-=650"
           });
-          //need webkit-transform?s
+          //need webkit-transforms
           setTimeout(function() {
+            // $('.breaking').css("margin-bottom", "0px");
             $('.breaking').animate({
-              bottom: "+=650"
+              bottom: "0"
             });
             $('.breaking').removeClass('rotateRight');
             $('.break').removeClass('rotateLeft');
