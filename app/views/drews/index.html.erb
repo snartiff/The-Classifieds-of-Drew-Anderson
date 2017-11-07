@@ -22,7 +22,7 @@
   <%= image_tag "bookcover.jpg", class: "cover" %>
 </div>
 <div class="center">
-  <%= link_to image_tag("kindle_button.jpg", class: "kindle"), "https://www.amazon.com", target: :_blank %>
+  <%= link_to image_tag("kindle_button.jpg", class: "kindle"), "https://www.amazon.com/dp/B0776NTQWL", target: :_blank %>
 </div>
 <div id="story">
   <div id="breaking_header">
@@ -45,7 +45,8 @@
   <p>For distraction, Lee listens to Kanye throwbacks, sleeps with her nightmares, and plays with metaphors while in transit.</p>
   <p>She lives in a major metropolitan city.</p>
   <span id="author_italic">The Classifieds of Drew Anderson</span>
-  <span>is her first major literary work.</span>
+  <span>is her first major literary work.</span></br></br>
+  <p>Follow her on twitter: <a target="_blank" href="https://twitter.com/leedeviar?lang=en">@leedeviar</a></p>
 </div>
 <div id="suspects">
   <h1>Don't Believe Everything You Read</h1>
@@ -98,6 +99,7 @@ function scrollEventHandler() {
           $('.breaking').animate({
             bottom: "-=650"
           });
+          //need webkit-transform?s
           setTimeout(function() {
             $('.breaking').animate({
               bottom: "+=650"
@@ -158,7 +160,7 @@ function unbindScrollEventHandler() {
               $('.breaking').removeClass('rotateRight');
               $('.break').removeClass('rotateLeft');
             }, 3000);
-    }, 1300)
+    }, f)
   })
 //After newspaper animation has ended, hide the newspaper png
   $(".newspaper").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
